@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: chest-ct
+  name: chest-ct-api-deployment
+spec:
+  replicas: 2  # Pod 數量
+  selector:
+    matchLabels:
+      app: chest-ct-api  # 需和 template.metadata.labels 一致
+  template:
+    metadata:
+      labels:
+        app: chest-ct-api  # 設定 Pod 的標籤為 app: chest-ct-api
+    spec:
+      containers:
+        - name: chest-ct-api
+          image: chest-ct-serving:latest
+          ports:
+            - containerPort: 9528
+          imagePullPolicy: Never
+          envFrom: 
+            - secretRef:
+                name: s3-secret  # app 本身不會用到，這邊只是示範語法

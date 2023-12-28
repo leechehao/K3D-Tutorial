@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: chest-ct
+  name: chest-ct-frontend-service
+spec:
+  type: NodePort
+  ports:
+    - port: 9988
+      targetPort: 9529
+      nodePort: 30001
+  selector:
+    app: chest-ct-frontend

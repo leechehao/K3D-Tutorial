@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: chest-ct
+  name: chest-ct-frontend-deployment
+spec:
+  replicas: 1  # Pod 數量
+  selector:
+    matchLabels:
+      app: chest-ct-frontend  # 需和 template.metadata.labels 一致
+  template:
+    metadata:
+      labels:
+        app: chest-ct-frontend  # 設定 Pod 的標籤為 app: chest-ct-frontend
+    spec:
+      containers:
+        - name: chest-ct-frontend
+          image: chest-ct-frontend:latest
+          ports:
+            - containerPort: 9529
+          imagePullPolicy: Never
+
