@@ -22,3 +22,21 @@ spec:
           envFrom: 
             - secretRef:
                 name: s3-secret  # app 本身不會用到，這邊只是示範語法
+          livenessProbe:
+            httpGet:
+              path: /liveness
+              port: 9528
+            initialDelaySeconds: 3
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 9528
+            initialDelaySeconds: 3
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 3
