@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  namespace: chest-ct
+  name: chest-ct-limit
+spec:
+  limits:
+    - type: Container
+      max:
+        cpu: 2000m
+        memory: 1024Mi
+      min:
+        cpu: 250m
+        memory: 128Mi
+      default:
+        cpu: 1000m
+        memory: 512Mi
+      defaultRequest:
+        cpu: 500m
+        memory: 256Mi
+      maxLimitRequestRatio:
+        cpu: 2
+        memory: 2
