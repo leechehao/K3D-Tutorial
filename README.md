@@ -9,3 +9,6 @@
 
 ## Resource
 教學示範 [Blog](https://hackmd.io/@6j0OMC7UQbGqQLfUg9pauA/rJxkx8zda)
+
+## Multi Container & Init Container
+教學示範 [Blog](https://hackmd.io/@6j0OMC7UQbGqQLfUg9pauA/Syu5DeV_a)
