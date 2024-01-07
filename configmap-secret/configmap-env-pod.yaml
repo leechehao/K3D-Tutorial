@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-env-pod
+spec:
+  containers:
+    - name: configmap-env-pod
+      image: alpine
+      command: ["sleep", "3600"]
+      env:
+        - name: APP_COLOR_NEW # 這邊是自行定義，不需要跟 ConfigMap 裡的 key name 一致
+          valueFrom:
+            configMapKeyRef:
+              name: game-demo # ConfigMap name
+              key: APP_COLOR # 這邊的 key 是 ConfigMap 裡面使用的 key name

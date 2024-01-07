@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-volume-pod
+spec:
+  containers:
+    - name: configmap-volume-pod
+      image: alpine
+      command: ["sleep", "3600"]
+      volumeMounts:
+        - name: game-demo-volume # volume 的名稱，定義如下
+          mountPath: "/config"
+          readOnly: true
+  volumes:
+    - name: game-demo-volume
+      configMap:
+        name: game-demo # 前面先建好的 Configmap name
