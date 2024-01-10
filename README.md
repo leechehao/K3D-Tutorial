@@ -15,3 +15,12 @@
 
 ## ConfigMap & Secret 介紹
 教學示範 [Blog](https://hackmd.io/@6j0OMC7UQbGqQLfUg9pauA/rkqp0lBup)
+
+## Label & Annotation 介紹
+教學示範 [Blog](https://hackmd.io/@6j0OMC7UQbGqQLfUg9pauA/rkgWcv7Yda)
+
+## 將 Pod 指派給 Node
+教學示範 [Blog](https://hackmd.io/@6j0OMC7UQbGqQLfUg9pauA/HJnniAOdp)
+
+## Taints & Tolerations 介紹
+教學示範 [Blog](https://hackmd.io/@6j0OMC7UQbGqQLfUg9pauA/r1-eZYcua)

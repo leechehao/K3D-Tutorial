@@ -5,7 +5,7 @@ metadata:
   name: chest-ct-quota
 spec:
   hard:
-    requests.cpu: 1
+    requests.cpu: 2
     requests.memory: 1Gi
-    limits.cpu: 2
-    limits.memory: 2Gi
+    limits.cpu: 6
+    limits.memory: 3Gi
